@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Dept.xml 在com.tarena.entity 包中  -->
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<!-- namespace：接口的名字 -->
+<mapper namespace="com.dbly.dao.IStudentDAO">
+
+    <!-- 添加一条记录 -->
+    <insert id="insertStudent"
+            parameterType="com.dbly.entity.Student">
+        INSERT INTO student VALUES (null,#{sname},#{ssex},#{className})
+    </insert>
+
+</mapper>
