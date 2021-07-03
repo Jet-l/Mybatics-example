@@ -11,4 +11,20 @@
         INSERT INTO student VALUES (null,#{sname},#{ssex},#{className})
     </insert>
 
+    <!-- 如果返回值类型为集合，则resultType要设置为为集合的泛型 -->
+    <select id="findAllStudent"
+            resultType="com.dbly.entity.Student">
+        select * from student
+    </select>
+
+    <delete id="deleteStudent"
+            parameterType="int">
+        delete from student where sid = #{id}
+    </delete>
+
+    <update id="updateStudent"
+            parameterType="com.dbly.entity.Student">
+        update student set sname =#{sname} where sid = #{sid}
+    </update>
+
 </mapper>
